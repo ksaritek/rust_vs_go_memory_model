@@ -1,6 +1,6 @@
 # Go Memory Model - Live Demo Slides
 
-## 🎯 Goal: Understand Go's Memory Model to Compare with Rust
+## Goal: Understand Go's Memory Model to Compare with Rust
 
 ---
 
@@ -18,7 +18,7 @@
 1. **Compile-time**: Escape analysis determines stack vs heap
 2. **Runtime**: Garbage collector cleans up heap memory automatically
 
-**invalid memory 💥 (dangling pointer!)**
+**invalid memory (dangling pointer!)**
 
 ```go
 // Question 1: Does a pointer to this variable leave the function?
@@ -71,10 +71,10 @@ make run
 ```
 
 ### What You'll See:
-1. ✅ Stack vs Heap allocation
-2. ✅ Multiple pointers sharing memory (4 pointers → same address!)
-3. ✅ Slice sharing (modify one, affects all)
-4. ✅ Memory measurements (actual bytes allocated)
+1. Stack vs Heap allocation
+2. Multiple pointers sharing memory (4 pointers → same address!)
+3. Slice sharing (modify one, affects all)
+4. Memory measurements (actual bytes allocated)
 
 ### Key Observation
 > Notice: Multiple pointers all point to `0x14000...` (same heap address)
@@ -139,12 +139,12 @@ The compiler says:
 
 ## Slide 5: Go's Memory Model Summary
 
-### ✅ Pros (Why Go is Easy)
+### Pros (Why Go is Easy)
 - **No thinking required**: Compiler figures it out
 - **Flexible**: Multiple references to same data
 - **Safe**: GC prevents memory leaks/dangling pointers
 
-### ⚠️ Cons (Why Rust Exists)
+### Cons (Why Rust Exists)
 - **Runtime overhead**: GC pauses during collection
 - **Unpredictable**: Hard to know what goes to heap
 - **Less control**: Can't optimize critical paths
